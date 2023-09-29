@@ -1,39 +1,39 @@
-# k3s
+# rke2
 
-Welcome to k3s module. This module installs the Rancher's lightweight
-Kubernetes, k3s (see more on https://k3s.io/).
+Welcome to rke2 module. This module installs the Rancher's lightweight
+Kubernetes, rke2 (see more on https://rke2.io/).
 
 ## Table of Contents
 
 1. [Description](#description)
-1. [Setup - The basics of getting started with k3s](#setup)
-    * [Beginning with k3s](#beginning-with-k3s)
+1. [Setup - The basics of getting started with rke2](#setup)
+   - [Beginning with rke2](#beginning-with-rke2)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Development - Guide for contributing to the module](#development)
 
 ## Description
 
-This module installs the open source Rancher's lightweight Kubernetes, k3s.
+This module installs the open source Rancher's next-generation Kubernetes, rke2.
 
-Using this module, you can easily automate k3s installation in many machines,
-like in a School Lab or in a Raspberry Pi cluster.
+Using this module, you can easily automate rke2 installation in many machines,
+like in a School Lab.
 
 ## Setup
 
-### Beginning with k3s
+### Beginning with rke2
 
-Install this module using Puppet: `puppet module install igorolivei/k3s`
+Install this module using Puppet: `puppet module install etma/rke2`
 
-Or via Puppetfile: `mod 'igorolivei-k3s', '1.0.0'`
+Or via Puppetfile: `mod 'etma-rke2', '1.0.0'`
 
 ## Usage
 
-- Quick run: `puppet apply -e "include k3s"`
+- Quick run: `puppet apply -e "include rke2"`
 
 - Installing using the script installation mode:
 
 ```puppet
-class { 'k3s':
+class { 'rke2':
   installation_mode => 'script',
 }
 ```
@@ -41,7 +41,7 @@ class { 'k3s':
 - Installing using the binary installation mode:
 
 ```puppet
-class { 'k3s':
+class { 'rke2':
   installation_mode => 'binary',
 }
 ```
@@ -49,9 +49,9 @@ class { 'k3s':
 - Ensuring that it is uninstalled:
 
 ```puppet
-class { 'k3s':
+class { 'rke2':
   ensure            => 'absent',
-  installation_mode => 'binary',
+  installation_mode => 'script',
 }
 ```
 
@@ -69,5 +69,5 @@ class { 'k3s':
 
 ## Release Notes/Contributors/Etc.
 
-- Author: Igor Oliveira (igor.bezerra96@gmail.com)
-- Contributor: Pete Fritchman (@fetep)
+- Author: Erik Andersen (etma@vertisky.com)
+- Based on the k3s script from Igor Oliveira (igor.bezerra96@gmail.com) (igorolivei/puppet-k3s)

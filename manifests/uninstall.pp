@@ -1,14 +1,14 @@
-# @summary Class responsible for uninstalling k3s
-class k3s::uninstall {
-  case $k3s::installation_mode {
+# @summary Class responsible for uninstalling rke2
+class rke2::uninstall {
+  case $rke2::installation_mode {
     'script': {
-      exec { '/usr/local/bin/k3s-uninstall.sh':
-        onlyif => '/usr/bin/test -f /usr/local/bin/k3s-uninstall.sh',
+      exec { '/usr/local/bin/rke2-uninstall.sh':
+        onlyif => '/usr/bin/test -f /usr/local/bin/rke2-uninstall.sh',
       }
     }
 
     'binary': {
-      file { $k3s::binary_path:
+      file { $rke2::binary_path:
         ensure => absent,
       }
     }

@@ -1,0 +1,22 @@
+<%- if @disabled_services.is_a?(Array) -%>
+disable: 
+<% @disabled_services.each do |service| -%>
+  - <%= service %>
+<% end -%>
+<%- end -%>
+<%- if @tls_san.is_a?(Array) -%>
+tls-san:
+<% @tls_san.each do |tlssan| -%>
+  - <%= tlssan %>
+<% end -%>
+<%- end -%>
+<%- if @node_labels.is_a?(Array) -%>
+node-label:
+<% @node_labels.each do |node_label| -%>
+  - <%= node_label %>
+<% end -%>
+<%- end -%>
+kubelet-arg:
+  - "max-pods=<%= @max-pods %>"
+server: <%= @server %>
+token: <%= @token %>

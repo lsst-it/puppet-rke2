@@ -1,12 +1,12 @@
 {
-  "name": "igorolivei-k3s",
-  "version": "1.1.0",
-  "author": "Igor Oliveira",
-  "summary": "Install k3s, an open-source lightweight kubernetes.",
+  "name": "etma-rke2",
+  "version": "1.0.1",
+  "author": "Erik Andersen",
+  "summary": "Install rke2, Rancher's next-generation Kubernetes distribution.",
   "license": "Apache-2.0",
-  "source": "https://github.com/Igorolivei/puppet-k3s",
-  "project_page": "https://github.com/Igorolivei/puppet-k3s",
-  "issues_url": "https://github.com/Igorolivei/puppet-k3s/issues",
+  "source": "https://github.com/Vertisky/puppet-rke2",
+  "project_page": "https://github.com/Vertisky/puppet-rke2",
+  "issues_url": "https://github.com/Vertisky/puppet-rke2/issues",
   "dependencies": [
     {
       "name": "puppet/archive",
@@ -47,7 +47,7 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "18.04"
+        "22.04"
       ]
     }
   ],
