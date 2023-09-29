@@ -1,5 +1,7 @@
 ---
-k3s::ensure: 'present'
-k3s::installation_mode: 'script'
-k3s::binary_version: 'v1.19.4+k3s1'
-k3s::binary_path: '/usr/bin/k3s'
+rke2::ensure: 'present'
+rke2::installation_mode: 'script'
+rke2::binary_version: 'v1.25.14+rke2r1'
+rke2::binary_path: '/usr/bin/rke2'
+rke2::node_type: 'server'
+rke2::max_pods: 110

@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 **Features**
 
-Install K3s using the official script or downloading the official binary.
+Install RKE2 using the official script or downloading the official binary.
 
 ## Release 1.0.1
 

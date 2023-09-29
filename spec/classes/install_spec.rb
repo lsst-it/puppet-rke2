@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe 'k3s::install' do
+describe 'rke2::install' do
   on_supported_os.each do |os, os_facts|
     context "on #{os}" do
       let(:facts) { os_facts }
