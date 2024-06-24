@@ -12,6 +12,7 @@
 
 #### Private Classes
 
+* `rke2::install`
 * `rke2::repo`
 
 ## Classes

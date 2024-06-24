@@ -20,4 +20,6 @@ class rke2 (
   String[1] $release_series,
 ) {
   contain rke2::repo
+  contain rke2::install
+  Class['rke2::repo'] -> Class['rke2::install']
 }
