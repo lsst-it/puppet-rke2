@@ -19,6 +19,19 @@
 #     binary_version    => 'v1.25.14+rke2r1',
 #     binary_path       => '/home/john-doe/bin/rke2',
 #   }
+#
+# @param ensure
+# @param installation_mode
+# @param node_type
+# @param max_pods
+# @param server_url
+# @param token
+# @param arguments
+# @param tls_san
+# @param node_labels
+# @param disabled_services
+# @param binary_version
+# @param binary_path
 class rke2 (
   Enum['present', 'absent'] $ensure,
   Enum['script', 'binary'] $installation_mode,
