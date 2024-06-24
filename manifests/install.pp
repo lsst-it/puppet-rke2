@@ -1,5 +1,9 @@
 # @summary Class responsible for installing rke2
+#
+# @api private
 class rke2::install {
+  assert_private()
+
   case $rke2::installation_mode {
     'script': {
       archive { '/tmp/rke2_install.sh':
