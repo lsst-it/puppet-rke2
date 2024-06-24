@@ -67,7 +67,7 @@ class { 'rke2':
 - Validate your module using `pdk validate`.
 - Submit a pull request to this repository.
 
-## Release Notes/Contributors/Etc.
+## Release Notes/Contributors/Etc
 
 - Author: Erik Andersen (etma@vertisky.com)
 - Based on the k3s script from Igor Oliveira (igor.bezerra96@gmail.com) (igorolivei/puppet-k3s)
