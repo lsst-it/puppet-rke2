@@ -4,4 +4,3 @@ rke2::installation_mode: 'script'
 rke2::binary_version: 'v1.25.14+rke2r1'
 rke2::binary_path: '/usr/bin/rke2'
 rke2::node_type: 'server'
-rke2::max_pods: 110

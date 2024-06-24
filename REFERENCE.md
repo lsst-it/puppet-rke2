@@ -54,7 +54,6 @@ The following parameters are available in the `rke2` class:
 * [`ensure`](#-rke2--ensure)
 * [`installation_mode`](#-rke2--installation_mode)
 * [`node_type`](#-rke2--node_type)
-* [`max_pods`](#-rke2--max_pods)
 * [`binary_version`](#-rke2--binary_version)
 * [`binary_path`](#-rke2--binary_path)
 * [`token`](#-rke2--token)
@@ -62,6 +61,7 @@ The following parameters are available in the `rke2` class:
 * [`tls_san`](#-rke2--tls_san)
 * [`node_labels`](#-rke2--node_labels)
 * [`disabled_services`](#-rke2--disabled_services)
+* [`kubelet_args`](#-rke2--kubelet_args)
 
 ##### <a name="-rke2--ensure"></a>`ensure`
 
@@ -78,12 +78,6 @@ Data type: `Enum['script', 'binary']`
 ##### <a name="-rke2--node_type"></a>`node_type`
 
 Data type: `Enum['server','agent']`
-
-
-
-##### <a name="-rke2--max_pods"></a>`max_pods`
-
-Data type: `Integer`
 
 
 
@@ -134,6 +128,14 @@ Default value: `undef`
 ##### <a name="-rke2--disabled_services"></a>`disabled_services`
 
 Data type: `Optional[Array[Enum['rke2-canal','rke2-coredns','rke2-ingress-nginx','rke2-metrics-server']]]`
+
+
+
+Default value: `undef`
+
+##### <a name="-rke2--kubelet_args"></a>`kubelet_args`
+
+Data type: `Optional[Array[String]]`
 
 
 

@@ -22,7 +22,6 @@
 # @param ensure
 # @param installation_mode
 # @param node_type
-# @param max_pods
 # @param binary_version
 # @param binary_path
 # @param token
@@ -30,11 +29,11 @@
 # @param tls_san
 # @param node_labels
 # @param disabled_services
+# @param kubelet_args
 class rke2 (
   Enum['present', 'absent'] $ensure,
   Enum['script', 'binary'] $installation_mode,
   Enum['server','agent'] $node_type,
-  Integer $max_pods,
   String $binary_version,
   String $binary_path,
   Optional[String] $token = undef,
@@ -42,6 +41,7 @@ class rke2 (
   Optional[Array[String]] $tls_san = undef,
   Optional[Array[String]] $node_labels = undef,
   Optional[Array[Enum['rke2-canal','rke2-coredns','rke2-ingress-nginx','rke2-metrics-server']]] $disabled_services = undef,
+  Optional[Array[String]] $kubelet_args = undef,
 ) {
   if $installation_mode == 'binary' and (!$binary_path or !$binary_version) {
     fail('The vars $binary_version and $binary_path must be set when using the binary installation mode.')
