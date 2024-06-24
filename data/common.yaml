@@ -1,2 +1,3 @@
 ---
 rke2::node_type: 'server'
+rke2::release_series: '1.28'

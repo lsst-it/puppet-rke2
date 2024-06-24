@@ -6,7 +6,13 @@
 
 ### Classes
 
+#### Public Classes
+
 * [`rke2`](#rke2): RKE2, also known as RKE Government, is Rancher's next-generation
+
+#### Private Classes
+
+* `rke2::repo`
 
 ## Classes
 
@@ -35,10 +41,18 @@ class { 'rke2':
 The following parameters are available in the `rke2` class:
 
 * [`node_type`](#-rke2--node_type)
+* [`release_series`](#-rke2--release_series)
 
 ##### <a name="-rke2--node_type"></a>`node_type`
 
 Data type: `Enum['server','agent']`
 
 
+
+##### <a name="-rke2--release_series"></a>`release_series`
+
+Data type: `String[1]`
+
+The rke2 release series to install.  Corresponds to k8s major.minor
+versions.  E.g. '1.28', '1.30', etc.
 
