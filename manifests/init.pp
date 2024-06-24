@@ -36,7 +36,7 @@ class rke2 (
   Enum['present', 'absent'] $ensure,
   Enum['script', 'binary'] $installation_mode,
   Enum['server','agent'] $node_type,
-  Int $max_pods,
+  Integer $max_pods,
   String $server_url,
   String $token,
   String $arguments,
