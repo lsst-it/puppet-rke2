@@ -23,9 +23,9 @@
 # @param installation_mode
 # @param node_type
 # @param max_pods
-# @param token
 # @param binary_version
 # @param binary_path
+# @param token
 # @param server_url
 # @param tls_san
 # @param node_labels
@@ -35,9 +35,9 @@ class rke2 (
   Enum['script', 'binary'] $installation_mode,
   Enum['server','agent'] $node_type,
   Integer $max_pods,
-  String $token,
   String $binary_version,
   String $binary_path,
+  Optional[String] $token = undef,
   Optional[String] $server_url = undef,
   Optional[Array[String]] $tls_san = undef,
   Optional[Array[String]] $node_labels = undef,
