@@ -29,9 +29,9 @@
 # @param arguments
 # @param tls_san
 # @param node_labels
-# @param disabled_services
 # @param binary_version
 # @param binary_path
+# @param disabled_services
 class rke2 (
   Enum['present', 'absent'] $ensure,
   Enum['script', 'binary'] $installation_mode,
@@ -42,9 +42,9 @@ class rke2 (
   String $arguments,
   Array[String] $tls_san,
   Array[String] $node_labels,
-  Array[Enum['rke2-canal','rke2-coredns','rke2-ingress-nginx','rke2-metrics-server']] $disabled_services,
   String $binary_version,
   String $binary_path,
+  Optional[Array[Enum['rke2-canal','rke2-coredns','rke2-ingress-nginx','rke2-metrics-server']]] $disabled_services = undef,
 ) {
   if $installation_mode == 'binary' and (!$binary_path or !$binary_version) {
     fail('The vars $binary_version and $binary_path must be set when using the binary installation mode.')
