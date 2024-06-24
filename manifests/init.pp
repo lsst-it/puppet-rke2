@@ -13,7 +13,6 @@
 #     max_pods          => 200,
 #     server_url        => 'https://
 #     token             => 'random-string',
-#     arguments         => '--disable=servicelb --disable=traefik --disable=coredns',
 #     tls_san           => ['foo.example.com', 'bar.example.com'],
 #     node_labels       => ['foo=bar'],
 #     binary_version    => 'v1.25.14+rke2r1',
@@ -26,7 +25,6 @@
 # @param max_pods
 # @param server_url
 # @param token
-# @param arguments
 # @param tls_san
 # @param binary_version
 # @param binary_path
@@ -39,7 +37,6 @@ class rke2 (
   Integer $max_pods,
   String $server_url,
   String $token,
-  String $arguments,
   Array[String] $tls_san,
   String $binary_version,
   String $binary_path,
