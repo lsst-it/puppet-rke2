@@ -1,0 +1,23 @@
+---
+".puppet-lint.rc":
+  enabled_lint_checks:
+  - parameter_documentation
+  - parameter_types
+spec/spec_helper_acceptance.rb:
+  unmanaged: false
+".github/CONTRIBUTING.md":
+  delete: true
+".github/ISSUE_TEMPLATE.md":
+  delete: true
+".github/PULL_REQUEST_TEMPLATE.md":
+  delete: true
+".github/SECURITY.md":
+  delete: true
+Gemfile:
+  optional:
+    ":test":
+    - gem: puppet-lint-package_ensure-check
+    - gem: puppet-lint-resource_reference_syntax
+    - gem: puppet-lint-strict_indent-check
+    - gem: puppet-lint-unquoted_string-check
+    - gem: puppet-lint-variable_contains_upcase
