@@ -46,9 +46,6 @@ class rke2 (
   if $installation_mode == 'binary' and (!$binary_path or !$binary_version) {
     fail('The vars $binary_version and $binary_path must be set when using the binary installation mode.')
   }
-  if !$token {
-    fail('The var $token must be set.')
-  }
   if !$node_type {
     fail('The var $node_type must be set to either master or agent.')
   }
