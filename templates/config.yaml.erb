@@ -1,5 +1,5 @@
 <%- if @disabled_services.is_a?(Array) -%>
-disable: 
+disable:
 <% @disabled_services.each do |service| -%>
   - <%= service %>
 <% end -%>
@@ -16,7 +16,15 @@ node-label:
   - <%= node_label %>
 <% end -%>
 <%- end -%>
-kubelet-arg:
-  - "max-pods=<%= @max-pods %>"
+<% if @server -%>
 server: <%= @server %>
+<% end -%>
+<% if @token -%>
 token: <%= @token %>
+<% end -%>
+<%- if @kubelet_arg.is_a?(Array) -%>
+kubelet-arg:
+<% @kubelet_arg.each do |arg| -%>
+  - <%= arg %>
+<% end -%>
+<%- end -%>
