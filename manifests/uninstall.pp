@@ -1,5 +1,9 @@
 # @summary Class responsible for uninstalling rke2
+#
+# @api private
 class rke2::uninstall {
+  assert_private()
+
   case $rke2::installation_mode {
     'script': {
       exec { '/usr/local/bin/rke2-uninstall.sh':
