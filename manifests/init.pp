@@ -28,9 +28,9 @@
 # @param token
 # @param arguments
 # @param tls_san
-# @param node_labels
 # @param binary_version
 # @param binary_path
+# @param node_labels
 # @param disabled_services
 class rke2 (
   Enum['present', 'absent'] $ensure,
@@ -41,9 +41,9 @@ class rke2 (
   String $token,
   String $arguments,
   Array[String] $tls_san,
-  Array[String] $node_labels,
   String $binary_version,
   String $binary_path,
+  Optional[Array[String]] $node_labels = undef,
   Optional[Array[Enum['rke2-canal','rke2-coredns','rke2-ingress-nginx','rke2-metrics-server']]] $disabled_services = undef,
 ) {
   if $installation_mode == 'binary' and (!$binary_path or !$binary_version) {
