@@ -18,5 +18,7 @@ node-label:
 <%- end -%>
 kubelet-arg:
   - "max-pods=<%= @max-pods %>"
+<% if @server -%>
 server: <%= @server %>
+<% end -%>
 token: <%= @token %>

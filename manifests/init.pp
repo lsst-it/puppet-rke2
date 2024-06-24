@@ -23,11 +23,11 @@
 # @param installation_mode
 # @param node_type
 # @param max_pods
-# @param server_url
 # @param token
 # @param tls_san
 # @param binary_version
 # @param binary_path
+# @param server_url
 # @param node_labels
 # @param disabled_services
 class rke2 (
@@ -35,11 +35,11 @@ class rke2 (
   Enum['script', 'binary'] $installation_mode,
   Enum['server','agent'] $node_type,
   Integer $max_pods,
-  String $server_url,
   String $token,
   Array[String] $tls_san,
   String $binary_version,
   String $binary_path,
+  Optional[String] $server_url = undef,
   Optional[Array[String]] $node_labels = undef,
   Optional[Array[Enum['rke2-canal','rke2-coredns','rke2-ingress-nginx','rke2-metrics-server']]] $disabled_services = undef,
 ) {
