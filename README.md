@@ -28,30 +28,8 @@ Or via Puppetfile: `mod 'etma-rke2', '1.0.0'`
 
 ## Usage
 
-- Quick run: `puppet apply -e "include rke2"`
-
-- Installing using the script installation mode:
-
 ```puppet
-class { 'rke2':
-  installation_mode => 'script',
-}
-```
-
-- Installing using the binary installation mode:
-
-```puppet
-class { 'rke2':
-  installation_mode => 'binary',
-}
-```
-
-- Ensuring that it is uninstalled:
-
-```puppet
-class { 'rke2':
-  ensure            => 'absent',
-  installation_mode => 'script',
+include rke2
 }
 ```
 

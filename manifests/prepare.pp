@@ -9,8 +9,5 @@ class rke2::prepare {
     ensure  => file,
     mode    => '0644',
     content => template('rke2/config.yaml.erb'),
-    require => [
-      File['/tmp/rke2_install.sh'],
-    ],
   }
 }
