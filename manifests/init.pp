@@ -24,10 +24,10 @@
 # @param node_type
 # @param max_pods
 # @param token
-# @param tls_san
 # @param binary_version
 # @param binary_path
 # @param server_url
+# @param tls_san
 # @param node_labels
 # @param disabled_services
 class rke2 (
@@ -36,10 +36,10 @@ class rke2 (
   Enum['server','agent'] $node_type,
   Integer $max_pods,
   String $token,
-  Array[String] $tls_san,
   String $binary_version,
   String $binary_path,
   Optional[String] $server_url = undef,
+  Optional[Array[String]] $tls_san = undef,
   Optional[Array[String]] $node_labels = undef,
   Optional[Array[Enum['rke2-canal','rke2-coredns','rke2-ingress-nginx','rke2-metrics-server']]] $disabled_services = undef,
 ) {
@@ -51,9 +51,6 @@ class rke2 (
   }
   if $node_type == 'agent' and !$server_url {
     fail('The var $server_url must be set when installing a server.')
-  }
-  if !$tls_san {
-    fail('The var $tls_san must be set when installing a server.')
   }
 
   if $ensure == 'present' {
