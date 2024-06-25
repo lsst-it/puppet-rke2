@@ -43,6 +43,8 @@ The following parameters are available in the `rke2` class:
 
 * [`node_type`](#-rke2--node_type)
 * [`release_series`](#-rke2--release_series)
+* [`server_packages`](#-rke2--server_packages)
+* [`agent_packages`](#-rke2--agent_packages)
 
 ##### <a name="-rke2--node_type"></a>`node_type`
 
@@ -56,4 +58,16 @@ Data type: `String[1]`
 
 The rke2 release series to install.  Corresponds to k8s major.minor
 versions.  E.g. '1.28', '1.30', etc.
+
+##### <a name="-rke2--server_packages"></a>`server_packages`
+
+Data type: `Array[String[1]]`
+
+The list of packages to install on to a server node.
+
+##### <a name="-rke2--agent_packages"></a>`agent_packages`
+
+Data type: `Array[String[1]]`
+
+The list of packages to install on to an agent node.
 
