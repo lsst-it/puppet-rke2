@@ -46,6 +46,7 @@ The following parameters are available in the `rke2` class:
 * [`server_packages`](#-rke2--server_packages)
 * [`agent_packages`](#-rke2--agent_packages)
 * [`version`](#-rke2--version)
+* [`versionlock`](#-rke2--versionlock)
 
 ##### <a name="-rke2--node_type"></a>`node_type`
 
@@ -80,4 +81,12 @@ The specific version of rke2 to install and versionlock.  If not provided,
 the latest version in the release series will be installed.
 
 Default value: `undef`
+
+##### <a name="-rke2--versionlock"></a>`versionlock`
+
+Data type: `Boolean`
+
+Create a yum versionlock for the installed rke2 package(s).
+
+Default value: `false`
 
