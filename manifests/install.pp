@@ -26,6 +26,7 @@ class rke2::install {
       yum::versionlock { $pkg:
         ensure  => present,
         version => $rke2::version,
+        before  => Package[$pkg],
       }
     }
   }
