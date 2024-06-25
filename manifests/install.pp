@@ -3,12 +3,12 @@ class rke2::install {
   assert_private()
 
   if $rke2::node_type == 'server' {
-    $package_name = 'rke2-server'
+    $pkgs = $rke2::server_packages
   } else {
-    $package_name = 'rke2-agent'
+    $pkgs = $rke2::agent_packages
   }
 
-  package { $package_name:
+  package { $pkgs:
     ensure => installed,
   }
 }

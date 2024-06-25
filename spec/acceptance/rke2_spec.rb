@@ -18,9 +18,14 @@ describe 'rke2 class' do
       end
     end
 
-    describe package('rke2-server') do
-      it { is_expected.to be_installed }
-      it { is_expected.to be_installed.with_version('1.28') }
+    %w[
+      rke2-common
+      rke2-server
+    ].each do |pkg|
+      describe package(pkg) do
+        it { is_expected.to be_installed }
+        it { is_expected.to be_installed.with_version('1.28') }
+      end
     end
   end
 
@@ -39,9 +44,14 @@ describe 'rke2 class' do
       end
     end
 
-    describe package('rke2-server') do
-      it { is_expected.to be_installed }
-      it { is_expected.to be_installed.with_version('1.30') }
+    %w[
+      rke2-common
+      rke2-server
+    ].each do |pkg|
+      describe package(pkg) do
+        it { is_expected.to be_installed }
+        it { is_expected.to be_installed.with_version('1.30') }
+      end
     end
   end
 end
