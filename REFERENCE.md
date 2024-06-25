@@ -45,6 +45,7 @@ The following parameters are available in the `rke2` class:
 * [`release_series`](#-rke2--release_series)
 * [`server_packages`](#-rke2--server_packages)
 * [`agent_packages`](#-rke2--agent_packages)
+* [`version`](#-rke2--version)
 
 ##### <a name="-rke2--node_type"></a>`node_type`
 
@@ -70,4 +71,13 @@ The list of packages to install on to a server node.
 Data type: `Array[String[1]]`
 
 The list of packages to install on to an agent node.
+
+##### <a name="-rke2--version"></a>`version`
+
+Data type: `Optional[String[1]]`
+
+The specific version of rke2 to install and versionlock.  If not provided,
+the latest version in the release series will be installed.
+
+Default value: `undef`
 

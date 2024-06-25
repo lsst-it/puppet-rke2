@@ -8,7 +8,12 @@ class rke2::install {
     $pkgs = $rke2::agent_packages
   }
 
+  $v = $rke2::version ? {
+    undef => installed,
+    default => $rke2::version,
+  }
+
   package { $pkgs:
-    ensure => installed,
+    ensure => $v,
   }
 }
