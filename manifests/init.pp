@@ -24,6 +24,9 @@
 # @param agent_packages
 #   The list of packages to install on to an agent node.
 #
+# @param config
+#  Converted to the yaml as /etc/rancher/rke2/config.yaml.
+#
 # @param version
 #   The specific version of rke2 to install and versionlock.  If not provided,
 #   the latest version in the release series will be installed.
@@ -37,10 +40,20 @@ class rke2 (
   Enum['stable','latest'] $release_channel,
   Array[String[1]] $server_packages,
   Array[String[1]] $agent_packages,
+  Optional[Hash] $config = undef,
   Optional[String[1]] $version = undef,
   Boolean $versionlock = false,
 ) {
   contain rke2::repo
   contain rke2::install
-  Class['rke2::repo'] -> Class['rke2::install']
+
+  if $config {
+    contain rke2::config
+
+    Class['rke2::install']
+    -> Class['rke2::config']
+  }
+
+  Class['rke2::repo']
+  -> Class['rke2::install']
 }
