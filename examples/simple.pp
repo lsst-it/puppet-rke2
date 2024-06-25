@@ -6,4 +6,8 @@ resources { 'yumrepo':
   purge => true,
 }
 
-include rke2
+class { 'rke2':
+  config         => {
+    snapshotter => 'native',
+  },
+}
