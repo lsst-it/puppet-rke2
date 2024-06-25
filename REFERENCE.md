@@ -42,6 +42,7 @@ class { 'rke2':
 The following parameters are available in the `rke2` class:
 
 * [`node_type`](#-rke2--node_type)
+* [`release_channel`](#-rke2--release_channel)
 * [`release_series`](#-rke2--release_series)
 * [`server_packages`](#-rke2--server_packages)
 * [`agent_packages`](#-rke2--agent_packages)
@@ -53,6 +54,12 @@ The following parameters are available in the `rke2` class:
 Data type: `Enum['server','agent']`
 
 
+
+##### <a name="-rke2--release_channel"></a>`release_channel`
+
+Data type: `Enum['stable','latest']`
+
+The rke2 release channel to use.
 
 ##### <a name="-rke2--release_series"></a>`release_series`
 
