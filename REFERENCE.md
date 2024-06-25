@@ -12,6 +12,7 @@
 
 #### Private Classes
 
+* `rke2::config`
 * `rke2::install`
 * `rke2::repo`
 
@@ -46,6 +47,7 @@ The following parameters are available in the `rke2` class:
 * [`release_series`](#-rke2--release_series)
 * [`server_packages`](#-rke2--server_packages)
 * [`agent_packages`](#-rke2--agent_packages)
+* [`config`](#-rke2--config)
 * [`version`](#-rke2--version)
 * [`versionlock`](#-rke2--versionlock)
 
@@ -79,6 +81,14 @@ The list of packages to install on to a server node.
 Data type: `Array[String[1]]`
 
 The list of packages to install on to an agent node.
+
+##### <a name="-rke2--config"></a>`config`
+
+Data type: `Optional[Hash]`
+
+Converted to the yaml as /etc/rancher/rke2/config.yaml.
+
+Default value: `undef`
 
 ##### <a name="-rke2--version"></a>`version`
 
