@@ -11,6 +11,9 @@
 #
 # @param node_type
 #
+# @param release_channel
+#   The rke2 release channel to use.
+#
 # @param release_series
 #   The rke2 release series to install.  Corresponds to k8s major.minor
 #   versions.  E.g. '1.28', '1.30', etc.
@@ -31,6 +34,7 @@
 class rke2 (
   Enum['server','agent'] $node_type,
   String[1] $release_series,
+  Enum['stable','latest'] $release_channel,
   Array[String[1]] $server_packages,
   Array[String[1]] $agent_packages,
   Optional[String[1]] $version = undef,
