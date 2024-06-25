@@ -15,6 +15,7 @@
 * `rke2::config`
 * `rke2::install`
 * `rke2::repo`
+* `rke2::service`
 
 ## Classes
 

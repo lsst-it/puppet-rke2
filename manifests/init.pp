@@ -46,14 +46,17 @@ class rke2 (
 ) {
   contain rke2::repo
   contain rke2::install
+  contain rke2::service
 
   if $config {
     contain rke2::config
 
     Class['rke2::install']
     -> Class['rke2::config']
+    ~> Class['rke2::service']
   }
 
   Class['rke2::repo']
-  -> Class['rke2::install']
+  ~> Class['rke2::install']
+  ~> Class['rke2::service']
 }
