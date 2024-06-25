@@ -8,7 +8,4 @@ RSpec.configure do |c|
   c.before(:context, :cleanup_rpm) do
     cleanup_rpm
   end
-  c.after(:context, :cleanup_rpm) do
-    cleanup_rpm
-  end
 end

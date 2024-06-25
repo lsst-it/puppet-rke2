@@ -3,7 +3,7 @@
 ---
 fixtures:
   forge_modules:
-    archive: "puppet/archive"
+    concat: "puppetlabs/concat"  # required by yum::versionlock
     stdlib: "puppetlabs/stdlib"
     yum: "puppet/yum"
     yumrepo_core: "puppetlabs/yumrepo_core"

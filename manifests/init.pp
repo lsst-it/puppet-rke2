@@ -25,12 +25,16 @@
 #   The specific version of rke2 to install and versionlock.  If not provided,
 #   the latest version in the release series will be installed.
 #
+# @param versionlock
+#   Create a yum versionlock for the installed rke2 package(s).
+#
 class rke2 (
   Enum['server','agent'] $node_type,
   String[1] $release_series,
   Array[String[1]] $server_packages,
   Array[String[1]] $agent_packages,
   Optional[String[1]] $version = undef,
+  Boolean $versionlock = false,
 ) {
   contain rke2::repo
   contain rke2::install
