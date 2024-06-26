@@ -1,4 +1,5 @@
-# @summary Interface class to manage rke2 installation
+# @summary RKE2, also known as RKE Government, is Rancher's next-generation
+# Kubernetes distribution.
 #
 # @example
 #   include rke2

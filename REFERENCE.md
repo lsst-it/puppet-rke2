@@ -6,13 +6,13 @@
 
 ### Classes
 
-* [`rke2`](#rke2): Interface class to manage rke2 installation
+* [`rke2`](#rke2): RKE2, also known as RKE Government, is Rancher's next-generation
 
 ## Classes
 
 ### <a name="rke2"></a>`rke2`
 
-Interface class to manage rke2 installation
+Kubernetes distribution.
 
 #### Examples
 
