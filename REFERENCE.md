@@ -6,19 +6,13 @@
 
 ### Classes
 
-#### Public Classes
-
 * [`rke2`](#rke2): Interface class to manage rke2 installation
-
-#### Private Classes
-
-* `rke2::prepare`: Class responsible for preparing rke2
 
 ## Classes
 
 ### <a name="rke2"></a>`rke2`
 
-This class is reponsible to call the install or uninstall classes
+Interface class to manage rke2 installation
 
 #### Examples
 
@@ -32,11 +26,7 @@ include rke2
 
 ```puppet
 class { 'rke2':
-  node_type         => 'server',
-  server_url        => 'https://
-  token             => 'random-string',
-  tls_san           => ['foo.example.com', 'bar.example.com'],
-  node_labels       => ['foo=bar'],
+  node_type => 'server',
 }
 ```
 
@@ -45,64 +35,10 @@ class { 'rke2':
 The following parameters are available in the `rke2` class:
 
 * [`node_type`](#-rke2--node_type)
-* [`token`](#-rke2--token)
-* [`server_url`](#-rke2--server_url)
-* [`tls_san`](#-rke2--tls_san)
-* [`node_labels`](#-rke2--node_labels)
-* [`disabled_services`](#-rke2--disabled_services)
-* [`kubelet_args`](#-rke2--kubelet_args)
 
 ##### <a name="-rke2--node_type"></a>`node_type`
 
 Data type: `Enum['server','agent']`
 
 
-
-##### <a name="-rke2--token"></a>`token`
-
-Data type: `Optional[String]`
-
-
-
-Default value: `undef`
-
-##### <a name="-rke2--server_url"></a>`server_url`
-
-Data type: `Optional[String]`
-
-
-
-Default value: `undef`
-
-##### <a name="-rke2--tls_san"></a>`tls_san`
-
-Data type: `Optional[Array[String]]`
-
-
-
-Default value: `undef`
-
-##### <a name="-rke2--node_labels"></a>`node_labels`
-
-Data type: `Optional[Array[String]]`
-
-
-
-Default value: `undef`
-
-##### <a name="-rke2--disabled_services"></a>`disabled_services`
-
-Data type: `Optional[Array[Enum['rke2-canal','rke2-coredns','rke2-ingress-nginx','rke2-metrics-server']]]`
-
-
-
-Default value: `undef`
-
-##### <a name="-rke2--kubelet_args"></a>`kubelet_args`
-
-Data type: `Optional[Array[String]]`
-
-
-
-Default value: `undef`
 
