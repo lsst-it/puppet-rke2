@@ -12,9 +12,7 @@
 
 #### Private Classes
 
-* `rke2::install`: Class responsible for installing rke2
 * `rke2::prepare`: Class responsible for preparing rke2
-* `rke2::uninstall`: Class responsible for uninstalling rke2
 
 ## Classes
 
@@ -34,16 +32,11 @@ include rke2
 
 ```puppet
 class { 'rke2':
-  ensure            => 'present',
-  installation_mode => 'binary',
   node_type         => 'server',
-  max_pods          => 200,
   server_url        => 'https://
   token             => 'random-string',
   tls_san           => ['foo.example.com', 'bar.example.com'],
   node_labels       => ['foo=bar'],
-  binary_version    => 'v1.25.14+rke2r1',
-  binary_path       => '/home/john-doe/bin/rke2',
 }
 ```
 
@@ -51,11 +44,7 @@ class { 'rke2':
 
 The following parameters are available in the `rke2` class:
 
-* [`ensure`](#-rke2--ensure)
-* [`installation_mode`](#-rke2--installation_mode)
 * [`node_type`](#-rke2--node_type)
-* [`binary_version`](#-rke2--binary_version)
-* [`binary_path`](#-rke2--binary_path)
 * [`token`](#-rke2--token)
 * [`server_url`](#-rke2--server_url)
 * [`tls_san`](#-rke2--tls_san)
@@ -63,33 +52,9 @@ The following parameters are available in the `rke2` class:
 * [`disabled_services`](#-rke2--disabled_services)
 * [`kubelet_args`](#-rke2--kubelet_args)
 
-##### <a name="-rke2--ensure"></a>`ensure`
-
-Data type: `Enum['present', 'absent']`
-
-
-
-##### <a name="-rke2--installation_mode"></a>`installation_mode`
-
-Data type: `Enum['script', 'binary']`
-
-
-
 ##### <a name="-rke2--node_type"></a>`node_type`
 
 Data type: `Enum['server','agent']`
-
-
-
-##### <a name="-rke2--binary_version"></a>`binary_version`
-
-Data type: `String`
-
-
-
-##### <a name="-rke2--binary_path"></a>`binary_path`
-
-Data type: `String`
 
 
 
