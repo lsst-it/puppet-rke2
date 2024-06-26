@@ -6,7 +6,16 @@
 
 ### Classes
 
+#### Public Classes
+
 * [`rke2`](#rke2): RKE2, also known as RKE Government, is Rancher's next-generation
+
+#### Private Classes
+
+* `rke2::config`
+* `rke2::install`
+* `rke2::repo`
+* `rke2::service`
 
 ## Classes
 
@@ -35,10 +44,67 @@ class { 'rke2':
 The following parameters are available in the `rke2` class:
 
 * [`node_type`](#-rke2--node_type)
+* [`release_channel`](#-rke2--release_channel)
+* [`release_series`](#-rke2--release_series)
+* [`server_packages`](#-rke2--server_packages)
+* [`agent_packages`](#-rke2--agent_packages)
+* [`config`](#-rke2--config)
+* [`version`](#-rke2--version)
+* [`versionlock`](#-rke2--versionlock)
 
 ##### <a name="-rke2--node_type"></a>`node_type`
 
 Data type: `Enum['server','agent']`
 
 
+
+##### <a name="-rke2--release_channel"></a>`release_channel`
+
+Data type: `Enum['stable','latest']`
+
+The rke2 release channel to use.
+
+##### <a name="-rke2--release_series"></a>`release_series`
+
+Data type: `String[1]`
+
+The rke2 release series to install.  Corresponds to k8s major.minor
+versions.  E.g. '1.28', '1.30', etc.
+
+##### <a name="-rke2--server_packages"></a>`server_packages`
+
+Data type: `Array[String[1]]`
+
+The list of packages to install on to a server node.
+
+##### <a name="-rke2--agent_packages"></a>`agent_packages`
+
+Data type: `Array[String[1]]`
+
+The list of packages to install on to an agent node.
+
+##### <a name="-rke2--config"></a>`config`
+
+Data type: `Optional[Hash]`
+
+Converted to the yaml as /etc/rancher/rke2/config.yaml.
+
+Default value: `undef`
+
+##### <a name="-rke2--version"></a>`version`
+
+Data type: `Optional[String[1]]`
+
+The specific version of rke2 to install and versionlock.  If not provided,
+the latest version in the release series will be installed.
+
+Default value: `undef`
+
+##### <a name="-rke2--versionlock"></a>`versionlock`
+
+Data type: `Boolean`
+
+Create a yum versionlock for the installed rke2 package(s).
+
+Default value: `false`
 
