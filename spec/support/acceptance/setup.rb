@@ -5,10 +5,10 @@ configure_beaker(modules: :metadata) do |host|
 end
 
 def cleanup_rpm
-  on hosts, %[
-    dnf erase -y rke2\*
-    rm -f /etc/yum.repos.d/rancher\*
-  ]
+  on hosts, %(
+    dnf erase -y rke2\\*
+    rm -f /etc/yum.repos.d/rancher\\*
+  )
 end
 
 RSpec.configure do |c|
