@@ -1,6 +1,6 @@
 {
   "name": "lsst-rke2",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "AURA/LSST/Rubin Observatory",
   "summary": "RKE2, also known as RKE Government, is Rancher's next-generation Kubernetes distribution.",
   "license": "Apache-2.0",
