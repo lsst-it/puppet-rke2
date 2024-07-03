@@ -1,51 +1,56 @@
 # rke2
 
-Welcome to rke2 module. This module installs the Rancher's lightweight
-Kubernetes, rke2 (see more on https://rke2.io/).
-
 ## Table of Contents
 
+1. [Overview](#overview)
 1. [Description](#description)
-1. [Setup - The basics of getting started with rke2](#setup)
-   - [Beginning with rke2](#beginning-with-rke2)
 1. [Usage - Configuration options and additional functionality](#usage)
-1. [Development - Guide for contributing to the module](#development)
+1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+
+## Overview
+
+[RKE2](https://docs.rke2.io/), also known as RKE Government, is Rancher's next-generation Kubernetes distribution.
 
 ## Description
 
-This module installs the open source Rancher's next-generation Kubernetes, rke2.
+This module installs `rke2` from packages (E.g. a yum repo) and configures the installation via `config.yaml`.
 
-Using this module, you can easily automate rke2 installation in many machines,
-like in a School Lab.
-
-## Setup
-
-### Beginning with rke2
-
-Install this module using Puppet: `puppet module install etma/rke2`
-
-Or via Puppetfile: `mod 'etma-rke2', '1.0.0'`
+> [!IMPORTANT]
+> The `rspec-beaker` tests timeout / fail under github actions and at not part of an active workflow.  The acceptance tests will need to be run manually prior to the merge of PRs.
 
 ## Usage
 
-```puppet
-include rke2
-}
+Example role defined via hiera.
+
+```yaml
+---
+lookup_options:
+  rke2::config:
+    merge:
+      strategy: "deep"
+      knockout_prefix: "--"
+classes:
+  - "rke2"
+rke2::config:
+  server: "https://%{::cluster}.%{::site}.example.com:9345"
+  token: "ENC[PKCS7,...]"
+  node-name: "%{facts.hostname}"
+  tls-san:
+    - "%{::cluster}.%{::site}.example.com"
+  node-label:
+    - "role=storage-node"
+  disable:
+    - "rke2-ingress-nginx"
+  disable-cloud-controller: true
 ```
 
-## Development
+In this example, a DNS A/AAAA record for `%{::cluster}.%{::site}.example.com` is required.
 
-### Contributing
+If the cluster is being provisioned from scratch.
+In other words, when there are no pre-existing etcd instances.
+The `server` key will need to be manually deleted from `/etc/rancher/rke2/config.yaml` on one (and only one) node and the `rke2-server` service restarted.
+While this key could be knocked on a single node via hiera, if the node without the `server` key is ever re-provisioned, it would create a new standalone cluster instance which is detached from the existing etcd instances.
 
-- Create a topic branch from where you want to base your work. This is usually the master branch.
-- Push your changes to a topic branch in your fork of the repository.
-- Add yourself as a contributor in the Contributors sections of this file.
-- Make sure your commits messages are describing what has changed.
-- Make sure you have tested your changes and nothing breaks.
-- Validate your module using `pdk validate`.
-- Submit a pull request to this repository.
+## Reference
 
-## Release Notes/Contributors/Etc
-
-- Author: Erik Andersen (etma@vertisky.com)
-- Based on the k3s script from Igor Oliveira (igor.bezerra96@gmail.com) (igorolivei/puppet-k3s)
+See [REFERENCE](REFERENCE.md)

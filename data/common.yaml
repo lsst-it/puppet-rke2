@@ -1,2 +1,10 @@
 ---
 rke2::node_type: 'server'
+rke2::release_channel: 'stable'
+rke2::release_series: '1.28'
+rke2::server_packages:
+  - rke2-common
+  - rke2-server
+rke2::agent_packages:
+  - rke2-common
+  - rke2-agent
