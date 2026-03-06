@@ -51,6 +51,20 @@ In other words, when there are no pre-existing etcd instances.
 The `server` key will need to be manually deleted from `/etc/rancher/rke2/config.yaml` on one (and only one) node and the `rke2-server` service restarted.
 While this key could be knocked on a single node via hiera, if the node without the `server` key is ever re-provisioned, it would create a new standalone cluster instance which is detached from the existing etcd instances.
 
+### Managing repositories outside the module
+
+Set `manage_repo: false` to disable the module's yum repository management.
+This is useful when repositories are already configured by another module,
+a profile, or an external tool (e.g. Spacewalk / Katello / subscription-manager).
+
+```yaml
+rke2::manage_repo: false
+```
+
+When `manage_repo` is `false`, the module will not create or modify any
+`yumrepo` resources.  The repositories must already be present and enabled
+before the RKE2 packages can be installed.
+
 ## Reference
 
 See [REFERENCE](REFERENCE.md)

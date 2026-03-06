@@ -51,6 +51,7 @@ The following parameters are available in the `rke2` class:
 * [`config`](#-rke2--config)
 * [`version`](#-rke2--version)
 * [`versionlock`](#-rke2--versionlock)
+* [`manage_repo`](#-rke2--manage_repo)
 
 ##### <a name="-rke2--node_type"></a>`node_type`
 
@@ -107,4 +108,14 @@ Data type: `Boolean`
 Create a yum versionlock for the installed rke2 package(s).
 
 Default value: `false`
+
+##### <a name="-rke2--manage_repo"></a>`manage_repo`
+
+Data type: `Boolean`
+
+When true (default), the module manages the RKE2 yum repositories.
+Set to false to disable repo management and configure repositories
+outside this module (e.g. via a profile or a separate Puppet module).
+
+Default value: `true`
 
